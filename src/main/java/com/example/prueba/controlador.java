@@ -1,5 +1,6 @@
 package com.example.prueba;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,13 +11,17 @@ import lombok.extern.slf4j.Slf4j;
 
 public class controlador {
 
+	@Value("${index.saludo}")
+	private String saludo;
+
 	@GetMapping("/")
 	public String inicio(Model model) {
 		
 		
-	//var saludar = "Hola mundo";
+	var mensaje = "Mensaje enviado desde el controlador";
 		//log.debug("Ejecuando controlador Spring MVC");
-		
+		model.addAttribute("mensaje", mensaje);
+		model.addAttribute("saludo", saludo);
 		//Nombre de la pagina que se visualiza en el navegador
 		return "index";
 	}
