@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>Prueba web</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
+<head>
+    <title>Prueba web</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
 
-        <h1>Tittle</h1>
-		<p th:text="Saludos"></p>
+<h1>Prueba Spring Boot con Thymeleaf</h1>
+<p th:text="${mensaje}"></p>
+<p th:text="${saludo}">
 
-    </body>
+<p>
+    <!--Se accede a los elementos de personas por medio de ${}-->
+    Nombre: <span th:text="${persona.nombre}">Mostrar Nombre</span>    <br>
+
+    Apellido: <span th:text="${persona.apellido}">Mostrar Apellido</span>    <br>
+
+    Email: <span th:text="${persona.email}">Mostrar Email</span>    <br>
+
+    Telefono: <span th:text="${persona.telefono}">Mostrar Telefono</span>    <br>
+</p>
+</body>
 </html>
